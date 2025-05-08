@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyFlow - Find Your Inner Peace</title>
+    <!-- Link to Tailwind CSS from cdnjs -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- Link to Font Awesome from cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to a Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- You can add your favicon link here -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .feature-icon {
+            font-size: 3rem; /* Increased icon size */
+            margin-bottom: 1rem;
+        }
+        .app-screenshot {
+            border: 8px solid #4A5568; /* Darker gray border */
+            border-radius: 20px; /* More rounded corners */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-width: 280px; /* Max width for screenshots */
+            margin: 0 auto; /* Center screenshots */
+        }
+        .store-badge {
+            display: inline-block;
+            transition: transform 0.2s ease-in-out;
+            margin: 0.5rem;
+        }
+        .store-badge:hover {
+            transform: scale(1.05);
+        }
+        .store-badge img {
+            height: 60px; /* Standard height for store badges */
+        }
+        /* Custom scrollbar for a more polished look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5a6bb5;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="py-6 shadow-md bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-purple-600">HolyFlow</a>
+            <nav>
+                <a href="#features" class="text-gray-600 hover:text-purple-600 px-3 py-2">Features</a>
+                <a href="#showcase" class="text-gray-600 hover:text-purple-600 px-3 py-2">Showcase</a>
+                <a href="#download" class="text-gray-600 hover:text-purple-600 px-3 py-2">Download</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <!-- === UPDATE YOUR MAIN HEADLINE HERE === -->
+                Discover Serenity with HolyFlow
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto">
+                <!-- === UPDATE YOUR SUB-HEADLINE HERE === -->
+                Your personal guide to mindfulness, meditation, and spiritual well-being. Find your center, anytime, anywhere.
+            </p>
+            <div id="download" class="flex justify-center items-center space-x-4">
+                <!-- === UPDATE APP STORE LINKS HERE === -->
+                <a href="#your-app-store-link" class="store-badge">
+                    <img src="https://placehold.co/180x60?text=App+Store+Badge&font=roboto" alt="Download on the App Store">
+                </a>
+                <a href="#your-google-play-link" class="store-badge">
+                    <img src="https://placehold.co/180x60?text=Google+Play+Badge&font=roboto" alt="Get it on Google Play">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is HolyFlow Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">What is HolyFlow?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                <!-- === UPDATE THIS DESCRIPTION OF YOUR APP === -->
+                HolyFlow is a mobile application designed to help you integrate moments of peace and reflection into your daily life. Whether you're seeking guided meditations, uplifting affirmations, or a space for quiet contemplation, HolyFlow provides the tools you need to nurture your spiritual journey and enhance your overall well-being.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Key Features</h2>
+            <div class="grid md:grid-cols-3 gap-10 text-center">
+                <!-- Feature 1 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg">
+                    <i class="fas fa-heartbeat feature-icon text-purple-500"></i> <!-- === UPDATE ICON IF NEEDED === -->
+                    <h3 class="text-xl font-semibold mb-3">
+                        <!-- === UPDATE FEATURE 1 TITLE === -->
+                        Guided Meditations
+                    </h3>
+                    <p class="text-gray-600">
+                        <!-- === UPDATE FEATURE 1 DESCRIPTION === -->
+                        Access a library of calming meditations for stress relief, focus, and spiritual connection.
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg">
+                    <i class="fas fa-book-open feature-icon text-green-500"></i> <!-- === UPDATE ICON IF NEEDED === -->
+                    <h3 class="text-xl font-semibold mb-3">
+                        <!-- === UPDATE FEATURE 2 TITLE === -->
+                        Daily Inspirations
+                    </h3>
+                    <p class="text-gray-600">
+                        <!-- === UPDATE FEATURE 2 DESCRIPTION === -->
+                        Receive uplifting quotes, affirmations, and passages to brighten your day and guide your thoughts.
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="p-6 bg-white rounded-lg shadow-lg">
+                    <i class="fas fa-user-friends feature-icon text-blue-500"></i> <!-- === UPDATE ICON IF NEEDED === -->
+                    <h3 class="text-xl font-semibold mb-3">
+                        <!-- === UPDATE FEATURE 3 TITLE === -->
+                        Community Support (Optional)
+                    </h3>
+                    <p class="text-gray-600">
+                        <!-- === UPDATE FEATURE 3 DESCRIPTION === -->
+                        Connect with like-minded individuals on a shared journey of growth and mindfulness (if applicable).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase Section -->
+    <section id="showcase" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">See HolyFlow in Action</h2>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <!-- === REPLACE placehold.co LINKS WITH YOUR ACTUAL APP SCREENSHOTS === -->
+                <!-- It's best to use images with a mobile phone aspect ratio -->
+                <div class="text-center">
+                    <img src="https://placehold.co/280x580/764ba2/white?text=App+Screen+1&font=poppins" alt="App Screenshot 1" class="app-screenshot">
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/280x580/667eea/white?text=App+Screen+2&font=poppins" alt="App Screenshot 2" class="app-screenshot">
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/280x580/764ba2/white?text=App+Screen+3&font=poppins" alt="App Screenshot 3" class="app-screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action (Footer) -->
+    <section class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Find Your Flow?</h2>
+            <p class="text-lg mb-8 max-w-xl mx-auto">
+                <!-- === UPDATE YOUR FINAL CTA MESSAGE === -->
+                Download HolyFlow today and embark on a transformative journey towards inner peace and spiritual clarity.
+            </p>
+            <div class="flex justify-center items-center space-x-4">
+                <!-- === UPDATE APP STORE LINKS HERE === -->
+                <a href="#your-app-store-link" class="store-badge">
+                    <img src="https://placehold.co/180x60/ffffff/333333?text=App+Store&font=poppins" alt="Download on the App Store">
+                </a>
+                <a href="#your-google-play-link" class="store-badge">
+                    <img src="https://placehold.co/180x60/ffffff/333333?text=Google+Play&font=poppins" alt="Get it on Google Play">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="currentYear"></span> HolyFlow. All rights reserved.</p>
+            <p class="text-sm">
+                <!-- === ADD LINKS TO YOUR PRIVACY POLICY AND TERMS OF SERVICE === -->
+                <a href="#privacy-policy-link" class="hover:text-white">Privacy Policy</a> | 
+                <a href="#terms-of-service-link" class="hover:text-white">Terms of Service</a>
+            </p>
+            <!-- You can add social media links here if you want -->
+            <!-- 
+            <div class="mt-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+            -->
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
