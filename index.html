@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HolyFlow - Find Your Inner Peace</title>
+    <title>HolyFlow - Your Daily Christian Devotional</title>
     <!-- Link to Tailwind CSS from cdnjs -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <!-- Link to Font Awesome from cdnjs -->
@@ -14,24 +13,97 @@
     <!-- You can add your favicon link here -->
     <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
     <style>
+        :root {
+            --hf-primary-dark: #0f172a; /* Deep Navy/Almost Black Blue - Tailwind slate-900 */
+            --hf-primary-medium: #1e293b; /* Dark Slate Blue - Tailwind slate-800 */
+            --hf-secondary-blue: #334155; /* Mid Blue-Grey - Tailwind slate-700 */
+            --hf-accent-light: #94a3b8; /* Light Grey-Blue - Tailwind slate-400 */
+            --hf-text-light: #f1f5f9; /* Very Light Grey/Off-White - Tailwind slate-100 */
+            --hf-highlight: #facc15; /* Gold for icons/highlights - Tailwind yellow-400 */
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            background-color: var(--hf-primary-medium);
+            color: var(--hf-text-light);
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        /* Header */
+        .header-custom {
+            background-color: var(--hf-primary-dark);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+        }
+        .nav-link-custom {
+            color: var(--hf-accent-light);
+        }
+        .nav-link-custom:hover {
+            color: var(--hf-text-light);
+        }
+
+        /* Hero and CTA Background */
+        .hero-custom-bg {
+            background-image: url('background7.png');
+            background-size: cover;
+            background-position: center bottom; /* Emphasize lower part of image */
+            background-color: var(--hf-primary-dark); /* Fallback color */
+            color: var(--hf-text-light);
+        }
+        .hero-custom-bg h1, .hero-custom-bg p {
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Enhanced text shadow for readability */
+        }
+
+        /* Section Backgrounds */
+        .section-bg-medium { /* For sections on the primary medium background */
+            background-color: var(--hf-primary-medium);
+        }
+        .section-bg-secondary { /* For sections with a slightly different dark background */
+            background-color: var(--hf-secondary-blue);
+        }
+
+        /* Text Colors */
+        .text-main-light {
+            color: var(--hf-text-light);
+        }
+        .text-accent-light {
+            color: var(--hf-accent-light);
+        }
+        .section-title {
+            color: var(--hf-text-light);
+        }
+        .section-paragraph {
+            color: var(--hf-accent-light);
+        }
+
+        /* Feature Section */
+        .feature-card {
+            background-color: var(--hf-primary-dark); /* Darker cards for contrast */
+            border: 1px solid var(--hf-secondary-blue);
+            border-radius: 0.5rem; /* Tailwind's rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2), 0 2px 4px -1px rgba(0,0,0,0.1);
         }
         .feature-icon {
-            font-size: 3rem; /* Increased icon size */
+            font-size: 3rem;
             margin-bottom: 1rem;
+            color: var(--hf-highlight); /* Use highlight color for icons */
         }
+        .feature-card h3 {
+            color: var(--hf-text-light);
+        }
+        .feature-card p {
+            color: var(--hf-accent-light);
+        }
+
+        /* App Screenshot */
         .app-screenshot {
-            border: 8px solid #4A5568; /* Darker gray border */
-            border-radius: 20px; /* More rounded corners */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            max-width: 280px; /* Max width for screenshots */
-            margin: 0 auto; /* Center screenshots */
+            border: 8px solid var(--hf-secondary-blue);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            max-width: 280px;
+            margin: 0 auto;
         }
+
+        /* Store Badges */
         .store-badge {
             display: inline-block;
             transition: transform 0.2s ease-in-out;
@@ -41,111 +113,116 @@
             transform: scale(1.05);
         }
         .store-badge img {
-            height: 60px; /* Standard height for store badges */
+            height: 60px;
         }
-        /* Custom scrollbar for a more polished look (optional) */
+
+        /* Footer */
+        .footer-custom {
+            background-color: var(--hf-primary-dark);
+            color: var(--hf-accent-light);
+        }
+        .footer-custom a {
+            color: var(--hf-accent-light);
+        }
+        .footer-custom a:hover {
+            color: var(--hf-text-light);
+        }
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: var(--hf-primary-dark);
         }
         ::-webkit-scrollbar-thumb {
-            background: #667eea;
+            background: var(--hf-secondary-blue);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #5a6bb5;
+            background: var(--hf-accent-light);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="antialiased">
 
     <!-- Header -->
-    <header class="py-6 shadow-md bg-white sticky top-0 z-50">
+    <header class="py-4 shadow-md header-custom sticky top-0 z-50">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-purple-600">HolyFlow</a>
+            <a href="#" class="flex items-center">
+                <img src="holyflow_logo.png" alt="HolyFlow Logo" class="h-12"> <!-- Adjusted logo height -->
+            </a>
             <nav>
-                <a href="#features" class="text-gray-600 hover:text-purple-600 px-3 py-2">Features</a>
-                <a href="#showcase" class="text-gray-600 hover:text-purple-600 px-3 py-2">Showcase</a>
-                <a href="#download" class="text-gray-600 hover:text-purple-600 px-3 py-2">Download</a>
+                <a href="#features" class="nav-link-custom px-3 py-2 rounded hover:bg-gray-700 transition-colors">Features</a>
+                <a href="#showcase" class="nav-link-custom px-3 py-2 rounded hover:bg-gray-700 transition-colors">Showcase</a>
+                <a href="#download-cta" class="nav-link-custom px-3 py-2 rounded hover:bg-gray-700 transition-colors">Download</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-gradient text-white py-20 md:py-32">
+    <section class="hero-custom-bg text-white py-20 md:py-32">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                <!-- === UPDATE YOUR MAIN HEADLINE HERE === -->
-                Discover Serenity with HolyFlow
+                Deepen Your Faith with HolyFlow
             </h1>
             <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto">
-                <!-- === UPDATE YOUR SUB-HEADLINE HERE === -->
-                Your personal guide to mindfulness, meditation, and spiritual well-being. Find your center, anytime, anywhere.
+                Your personalized Christian devotional, grounded in biblical truth. Find guidance and peace tailored to your heart's needs.
             </p>
-            <div id="download" class="flex justify-center items-center space-x-4">
-                <!-- === UPDATE APP STORE LINKS HERE === -->
+            <div class="flex justify-center items-center space-x-2 sm:space-x-4">
                 <a href="#your-app-store-link" class="store-badge">
-                    <img src="https://placehold.co/180x60?text=App+Store+Badge&font=roboto" alt="Download on the App Store">
+                    <img src="https://placehold.co/180x60/FFFFFF/0F172A?text=App+Store&font=poppins" alt="Download on the App Store">
                 </a>
                 <a href="#your-google-play-link" class="store-badge">
-                    <img src="https://placehold.co/180x60?text=Google+Play+Badge&font=roboto" alt="Get it on Google Play">
+                    <img src="https://placehold.co/180x60/FFFFFF/0F172A?text=Google+Play&font=poppins" alt="Get it on Google Play">
                 </a>
             </div>
         </div>
     </section>
 
     <!-- What is HolyFlow Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 md:py-20 section-bg-medium">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">What is HolyFlow?</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-                <!-- === UPDATE THIS DESCRIPTION OF YOUR APP === -->
-                HolyFlow is a mobile application designed to help you integrate moments of peace and reflection into your daily life. Whether you're seeking guided meditations, uplifting affirmations, or a space for quiet contemplation, HolyFlow provides the tools you need to nurture your spiritual journey and enhance your overall well-being.
+            <h2 class="text-3xl font-bold section-title mb-6">What is HolyFlow?</h2>
+            <p class="section-paragraph max-w-2xl mx-auto text-lg">
+                HolyFlow is a highly personalized daily Christian devotional app. It's designed to bring you closer to God by providing biblical insights and reflections tailored to your current mood, personal struggles, or specific verses and topics on your mind. Experience a unique devotional journey that speaks directly to you.
             </p>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-16 bg-gray-100">
+    <section id="features" class="py-16 md:py-20 section-bg-secondary">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Key Features</h2>
-            <div class="grid md:grid-cols-3 gap-10 text-center">
+            <h2 class="text-3xl font-bold text-center section-title mb-12">Key Features</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
                 <!-- Feature 1 -->
-                <div class="p-6 bg-white rounded-lg shadow-lg">
-                    <i class="fas fa-heartbeat feature-icon text-purple-500"></i> <!-- === UPDATE ICON IF NEEDED === -->
+                <div class="p-6 feature-card">
+                    <i class="fas fa-hand-holding-heart feature-icon"></i>
                     <h3 class="text-xl font-semibold mb-3">
-                        <!-- === UPDATE FEATURE 1 TITLE === -->
-                        Guided Meditations
+                        Personalized Devotionals
                     </h3>
-                    <p class="text-gray-600">
-                        <!-- === UPDATE FEATURE 1 DESCRIPTION === -->
-                        Access a library of calming meditations for stress relief, focus, and spiritual connection.
+                    <p>
+                        Receive daily devotionals uniquely crafted for you, based on your mood, struggles, or chosen scriptures.
                     </p>
                 </div>
                 <!-- Feature 2 -->
-                <div class="p-6 bg-white rounded-lg shadow-lg">
-                    <i class="fas fa-book-open feature-icon text-green-500"></i> <!-- === UPDATE ICON IF NEEDED === -->
+                <div class="p-6 feature-card">
+                    <i class="fas fa-bible feature-icon"></i>
                     <h3 class="text-xl font-semibold mb-3">
-                        <!-- === UPDATE FEATURE 2 TITLE === -->
-                        Daily Inspirations
+                        Biblically Grounded
                     </h3>
-                    <p class="text-gray-600">
-                        <!-- === UPDATE FEATURE 2 DESCRIPTION === -->
-                        Receive uplifting quotes, affirmations, and passages to brighten your day and guide your thoughts.
+                    <p>
+                        Explore rich, scriptural content that offers wisdom, comfort, and guidance for your daily walk with Christ.
                     </p>
                 </div>
                 <!-- Feature 3 -->
-                <div class="p-6 bg-white rounded-lg shadow-lg">
-                    <i class="fas fa-user-friends feature-icon text-blue-500"></i> <!-- === UPDATE ICON IF NEEDED === -->
+                <div class="p-6 feature-card">
+                    <i class="fas fa-search feature-icon"></i>
                     <h3 class="text-xl font-semibold mb-3">
-                        <!-- === UPDATE FEATURE 3 TITLE === -->
-                        Community Support (Optional)
+                        Topic & Verse Exploration
                     </h3>
-                    <p class="text-gray-600">
-                        <!-- === UPDATE FEATURE 3 DESCRIPTION === -->
-                        Connect with like-minded individuals on a shared journey of growth and mindfulness (if applicable).
+                    <p>
+                        Easily find devotionals related to specific biblical topics, verses, or life situations you're navigating.
                     </p>
                 </div>
             </div>
@@ -153,55 +230,49 @@
     </section>
 
     <!-- App Showcase Section -->
-    <section id="showcase" class="py-16 bg-white">
+    <section id="showcase" class="py-16 md:py-20 section-bg-medium">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">See HolyFlow in Action</h2>
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-                <!-- === REPLACE placehold.co LINKS WITH YOUR ACTUAL APP SCREENSHOTS === -->
-                <!-- It's best to use images with a mobile phone aspect ratio -->
+            <h2 class="text-3xl font-bold text-center section-title mb-12">See HolyFlow in Action</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 items-start">
                 <div class="text-center">
-                    <img src="https://placehold.co/280x580/764ba2/white?text=App+Screen+1&font=poppins" alt="App Screenshot 1" class="app-screenshot">
+                    <img src="screen1.jpg" alt="App Screenshot 1 - Personalized Devotional" class="app-screenshot">
                 </div>
                 <div class="text-center">
-                    <img src="https://placehold.co/280x580/667eea/white?text=App+Screen+2&font=poppins" alt="App Screenshot 2" class="app-screenshot">
+                    <img src="screen2.jpg" alt="App Screenshot 2 - Bible Verse Exploration" class="app-screenshot">
                 </div>
-                <div class="text-center">
-                    <img src="https://placehold.co/280x580/764ba2/white?text=App+Screen+3&font=poppins" alt="App Screenshot 3" class="app-screenshot">
+                <div class="text-center sm:col-span-2 md:col-span-1"> <!-- Center last item on small screens if 3 items -->
+                    <img src="screen3.jpg" alt="App Screenshot 3 - Topic Selection" class="app-screenshot">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action (Footer) -->
-    <section class="hero-gradient text-white py-16">
+    <!-- Call to Action -->
+    <section id="download-cta" class="hero-custom-bg text-white py-16 md:py-24">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to Find Your Flow?</h2>
+            <h2 class="text-3xl font-bold mb-6">Ready to Grow in Faith?</h2>
             <p class="text-lg mb-8 max-w-xl mx-auto">
-                <!-- === UPDATE YOUR FINAL CTA MESSAGE === -->
-                Download HolyFlow today and embark on a transformative journey towards inner peace and spiritual clarity.
+                Download HolyFlow today and start your personalized journey with God's Word, bringing daily encouragement and spiritual depth.
             </p>
-            <div class="flex justify-center items-center space-x-4">
-                <!-- === UPDATE APP STORE LINKS HERE === -->
+            <div class="flex justify-center items-center space-x-2 sm:space-x-4">
                 <a href="#your-app-store-link" class="store-badge">
-                    <img src="https://placehold.co/180x60/ffffff/333333?text=App+Store&font=poppins" alt="Download on the App Store">
+                    <img src="https://placehold.co/180x60/FFFFFF/0F172A?text=App+Store&font=poppins" alt="Download on the App Store">
                 </a>
                 <a href="#your-google-play-link" class="store-badge">
-                    <img src="https://placehold.co/180x60/ffffff/333333?text=Google+Play&font=poppins" alt="Get it on Google Play">
+                    <img src="https://placehold.co/180x60/FFFFFF/0F172A?text=Google+Play&font=poppins" alt="Get it on Google Play">
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-8 text-center">
+    <footer class="footer-custom py-8 text-center">
         <div class="container mx-auto px-6">
             <p>&copy; <span id="currentYear"></span> HolyFlow. All rights reserved.</p>
-            <p class="text-sm">
-                <!-- === ADD LINKS TO YOUR PRIVACY POLICY AND TERMS OF SERVICE === -->
-                <a href="#privacy-policy-link" class="hover:text-white">Privacy Policy</a> | 
-                <a href="#terms-of-service-link" class="hover:text-white">Terms of Service</a>
+            <p class="text-sm mt-2">
+                <a href="privacy.html" class="hover:text-white">Privacy Policy</a> | 
+                <a href="terms.html" class="hover:text-white">Terms of Service</a>
             </p>
-            <!-- You can add social media links here if you want -->
             <!-- 
             <div class="mt-4">
                 <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-f"></i></a>
